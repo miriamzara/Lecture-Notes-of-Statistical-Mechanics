@@ -1,11 +1,17 @@
-%Geometry
-\newgeometry{inner=20mm,
-            outer=49mm,% = marginparsep + marginparwidth
-                       %   + 5mm (between marginpar and page border)
-            top=20mm,
-            bottom=25mm,
-            marginparsep=6mm,
-            marginparwidth=30mm}
+% 1. GEOMETRY
+% We use \geometry (not \newgeometry) to define the base layout.
+% I've integrated the headheight fix here as well.
+\geometry{
+    inner=20mm,
+    outer=49mm,      % marginparsep + marginparwidth + 5mm
+    top=25mm,        % Increased slightly to give header room
+    bottom=25mm,
+    marginparsep=6mm,
+    marginparwidth=30mm,
+    headheight=26pt  % REQUIRED to stop the fancyhdr warnings
+}
+
+% 2. MARGIN NOTES STYLING
 \makeatletter
 \renewcommand{\@marginparreset}{%
   \reset@font\small
@@ -15,55 +21,53 @@
 }
 \makeatother
 
-%Atom Latex
-%\pgfplotsset{compat=1.15}
-
-%%
+% 3. CAPTION SETUP
 \captionsetup[table]{font=small,labelfont={bf},skip=10pt}
 \captionsetup[figure]{font=small,labelfont={bf},skip=10pt}
 
-%intestazione pagina
+% 4. PAGE HEADERS (fancyhdr)
 \pagestyle{fancy}
 \fancyhf{}
+% E = Even page, O = Odd page; L = Left, R = Right
 \fancyhead[RE]{\ifnum\value{chapter}>0\nouppercase{\leftmark}\fi}
 \fancyhead[LE]{\small\textbf{\thepage}}
 \fancyhead[LO]{\nouppercase{\rightmark}}
 \fancyhead[RO]{\small\textbf{\thepage}}
 
-%link ipertestuale per indice
+% 5. HYPERREF SETUP
 \hypersetup{
-	colorlinks=false,
-	linkcolor=black,
-	filecolor=blue,
-	citecolor = blue,
-	urlcolor=blue,
-	}
+  colorlinks=true,   % Changed to true so colors actually show
+  linkcolor=black,   % Keep internal links black for professional look
+  filecolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  breaklinks=true    % Allows links to wrap over lines
+}
 
-%%%%%indent%%%
+% 6. PARAGRAPH SETTINGS
 \setlength{\parindent}{15pt}
 \setlength{\parskip}{0pt}
 
-
-%boh
+% 7. CHAPTER MARK STYLE
 \renewcommand{\chaptermark}[1]{%
  \markboth{\MakeUppercase{%
  \chaptername}\ \thechapter.%
  \ #1}{}}
 
-
- %Python in latex
- \definecolor{codegreen}{rgb}{0,0.6,0}
+% 8. COLORS & LISTINGS
+\definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 \definecolor{commentcolour}{rgb}{0.43,0.63,0.65}
-
 \definecolor{shadecolor}{rgb}{0.93, 0.93, 0.93}
 \definecolor{darkgreen}{rgb}{0.0, 0.5, 0.0}
 \definecolor{darkred}{rgb}{0.8, 0.0, 0.0}
 \definecolor{violet}{rgb}{0.55, 0.0, 0.55}
 
-\lstdefinestyle{mystyle}{ %Stile python code
+% Note: 'mystyle' was also defined in main.tex. 
+% This version here will be the one that "wins".
+\lstdefinestyle{mystyle}{
     backgroundcolor=\color{shadecolor},
     commentstyle=\color{commentcolour},
     keywordstyle=\color{darkgreen},

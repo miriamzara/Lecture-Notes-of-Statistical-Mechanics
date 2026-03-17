@@ -1,18 +1,19 @@
-\documentclass[11pt, a4paper, twoside, openright]{book}
+\documentclass[9pt, a4paper, twoside, openright]{book}
+
+% 1. ESSENTIAL CORE PACKAGES
+\usepackage[english]{babel}   
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}   % Note: Modern TeX handles this automatically, but safe to keep
+\usepackage{microtype}
 \usepackage{subfiles}
 \usepackage{float}
-\usepackage[pdfa]{hyperref}
-\usepackage[utf8]{inputenc}   %per riuscire a scrivere gli accenti
-\usepackage[english]{babel}   %per riuscire a scrivere gli accenti
-\usepackage[T1]{fontenc}
-\usepackage{microtype}
+
+% 2. INPUT YOUR CUSTOM CONFIGS (The "Brains" of the document)
 \input{../Utility/packages.tex}
 \input{../Utility/settings.tex}
 \input{../Utility/new_commands.tex}
 
-
-
-
+% 3. LSTLISTING CONFIGURATION (Keep this after packages.tex)
 \lstdefinestyle{mystyle}{
     backgroundcolor=\color{backcolour},   
     commentstyle=\color{codegreen},
@@ -31,35 +32,28 @@
     showtabs=false,                  
     tabsize=2
 }
-
 \lstset{style=mystyle}
+
+% 4. GEOMETRY & LAYOUT
+% I updated the headheight here to fix your Terminal Warning!
+\geometry{
+    left=2.5cm,
+    right=2.5cm,
+    top=2.5cm,
+    bottom=2.5cm,
+    headheight=26pt % Fixes the fancyhdr warning
+}
+
 \urlstyle{same}
 
-
-\geometry{
-left=2.5cm,
-right=2.5cm,
-top=2.5cm,
-bottom=2.5cm
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%JACOPO
+% 5. DOCUMENT START
 \begin{document}
-
-%%%%%%FRONTESPIZIO%%%%%%
-
 \frontmatter
 \input{../FrontPage/FrontPage.tex}
-
 \tableofcontents
-
-
 \pagestyle{plain}
-
 \subsubsection*{Disclaimer}
-
 Check all the formulas against the professor-supplied material. Care has been taken to be as accurate as possible, but errors are possible.
-
-
 \chapter{Introduction}
 
 The goal of statistical mechanics is to predict the macroscopic properties of bodies, most especially their thermodynamic properties, on the basis of their microscopic structure.
@@ -85,36 +79,6 @@ The simplest case is that in which there are only two values—in this fashion, 
 
 In this course, classical statistical mechanics of system at equilibrium is treated. 
 
-% \clearpage
-% \LARGE{ \textbf{Outline of the course} }
-
-% \normalsize
-% \begin{enumerate}
-% \item Brief recap of thermodinamics.
-% \item Equilibrium phases and thermodynamics of the phase transitions.
-% \item Statistical mechanics and theory of ensambles.
-% \item Thermodinamic limit and phase transitions in statistical mechanics.
-% \item Order parameter and critical point.
-% \item The role of modelling in the physics of phase transitions.
-% \item The Ising model.
-% \item Exact solutions of the Ising model.
-% \item Transfer matrix method.
-% \item Role of dimension and range of interactions in critical phenomena (lower critical dimension).
-% \item Approximations: \emph{Meanfield theory Weiss} and \emph{variational mean field}.
-% \item Landau theory of phase transitions: the role of symmetries.
-% \item Relevance of fluctuations: the \emph{Geinzburg criterium} and the notion of the \emph{upper critical dimension}.
-% \item The Ginzburg-Landau model.
-% \item Landau theory for non-homogeneous system. The \( \nu  \) exponent.
-% \item Gaussian fluctuations in the G-L theory.
-% \item Widom's scaling theory.
-% \item Kadauoff's theory of scaling.
-% \item The theory of renormalisations group and the origin of \emph{universality} in critical phenomena.
-% \item Spontaneous symmetry breaking.
-% \end{enumerate}
-
-
-
-
 
 
 \mainmatter
@@ -125,17 +89,14 @@ In this course, classical statistical mechanics of system at equilibrium is trea
 \subfile{../Arguments/Chapter3/Chapter3_Ensembles.tex}
 \subfile{../Arguments/Chapter4/Chapter4_PhasesTransition.tex}
 \subfile{../Arguments/Chapter5/Chapter5_RoleOfModels.tex}
-\subfile{../Arguments/Chapter6/Chapter6_ExactModels.tex}
-\subfile{../Arguments/Chapter7/Chapter7_DimensionSimmetryRange.tex}
-\subfile{../Arguments/Chapter8/Chapter8_MeanFieldTheory.tex}
-\subfile{../Arguments/Chapter9/Chapter9_NonIdealFluids.tex}
-\subfile{../Arguments/Chapter10/Chapter10_LandauTheory.tex}
-\subfile{../Arguments/Chapter11/Chapter11_Fluctuations.tex}
-\subfile{../Arguments/Chapter12/Chapter12_WidomTheory.tex}
-\subfile{../Arguments/Chapter13/Chapter13_Renormalitazion.tex}
-\subfile{../Arguments/Chapter14/Chapter14_SimmetryBreaking.tex}
-%\backmatter
-%\pagestyle{plain}
-%\input{../bibliography/bibliography.tex}
+%\subfile{../Arguments/Chapter6/Chapter6_ExactModels.tex}
+%\subfile{../Arguments/Chapter7/Chapter7_DimensionSimmetryRange.tex}
+%\subfile{../Arguments/Chapter8/Chapter8_MeanFieldTheory.tex}
+%\subfile{../Arguments/Chapter9/Chapter9_NonIdealFluids.tex}
+%\subfile{../Arguments/Chapter10/Chapter10_LandauTheory.tex}
+%\subfile{../Arguments/Chapter11/Chapter11_Fluctuations.tex}
+%\subfile{../Arguments/Chapter12/Chapter12_WidomTheory.tex}
+%\subfile{../Arguments/Chapter13/Chapter13_Renormalitazion.tex}
+%\subfile{../Arguments/Chapter14/Chapter14_SimmetryBreaking.tex}
 
 \end{document}

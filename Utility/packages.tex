@@ -1,96 +1,63 @@
-% Algorithms
-	%\usepackage{algpseudocode}
-	%\usepackage{algorithm}
+% 1. ENCODING AND LANGUAGE
+% (Moved to top of main.tex usually, but safe here)
+% \usepackage[english]{babel} 
 
-% Babel
-\usepackage[english]{babel}
-
-% Code writing
-	%\usepackage[procnames]{listings}
-
-% Font
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+% 2. MATH AND PHYSICS
 \usepackage{amssymb,amsmath,amsthm,amsfonts}
+\usepackage{physics} % Loaded here to avoid conflicts with amsmath
 \usepackage{eucal}
-\usepackage{textcomp}
+\usepackage{bm}
+\usepackage{cancel}
+\usepackage{bbold} % For identity matrix
+\usepackage{relsize}
 
-% Footnote
-
-\usepackage{float}
-% Hyperref
+% 3. HYPERREF AND URL (The Conflict Zone)
+% Load url with options BEFORE hyperref
 \usepackage[hyphens]{url}
 \usepackage{cite}
-\usepackage{hyperref}
+\usepackage{hyperref} 
 \usepackage{nameref}
-\usepackage{url}
-% Images
-\usepackage[pdftex]{graphicx}
-	%\usepackage{subfigure}
+
+% 4. IMAGES AND CAPTIONS
+\usepackage{graphicx} % [pdftex] is usually not needed on modern MacTeX
 \usepackage{subfig}
 \usepackage{eso-pic}
 \usepackage{caption}
 \usepackage{wrapfig}
+\usepackage{float}
 
-% List
-\usepackage{enumerate}
-\usepackage{enumitem}
-% SI units
-\usepackage{siunitx}
-
-% Standalone
-%\usepackage[subpreambles=true]{standalone}
-\usepackage{import}
-
-% Tables
+% 5. TABLES AND LISTS
 \usepackage{tabularx}
 \usepackage{booktabs}
 \usepackage{multirow}
+\usepackage{enumerate}
+\usepackage{enumitem}
 
-% TiKz and graphs
+% 6. TIKZ AND GRAPHS
 \usepackage{pgf,tikz,pgfplots}
-% \usepackage{gnuplottex}
-\usepackage{bm}
-\usepackage{relsize}
-%\usepackage[compat=1.1.0]{tikz-feynman}
+\pgfplotsset{compat=1.18} % Good practice to set a version
 \usepackage{circuitikz}
 
-% Typeset
-%\usepackage[top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
-\usepackage[top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+% 7. FORMATTING AND LAYOUT
+% Note: removed \usepackage[...]{geometry} here to avoid conflicts with settings.tex
+\usepackage{geometry}
 \usepackage{fancyhdr}
 \usepackage{indentfirst}
 \usepackage{titlesec}
 \usepackage{setspace}
 \usepackage{xspace}
-% \usepackage{parskip}  % Elimina il separatore a inizio paragrafo
 \usepackage{afterpage}
 \usepackage{comment}
+\usepackage{import}
+\usepackage{datetime}
 
-%Python
+% 8. SPECIAL EFFECTS
 \usepackage{xcolor}
 \usepackage{listings}
 \usepackage{framed}
-
-%Per scrivere matrice identità
-\usepackage{bbold}
-%Per semplificazione formule
-\usepackage{cancel}
-
-%Evidenziare formule
 \usepackage{empheq}
-	%oppure
-	%\usepackage{xcolor}
 \usepackage{soul}
-
-%Evidenziare testo con mdframed
 \usepackage{mdframed}
-
-%Note a margine
 \usepackage{marginnote}
-
-%Display data
-\usepackage{datetime}
-
-%Physics
-\usepackage{physics}
+\usepackage{textcomp}
+\usepackage{siunitx}
