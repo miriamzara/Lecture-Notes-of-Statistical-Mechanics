@@ -186,13 +186,11 @@ where \( \mathbb{T} \) is a \( 2 \times 2 \)  matrix defined as
   It can also depends on how many spins are involved in the interacting terms that are present in the Hamiltonian (\( k_{LL} \sum_{}^{} S_i S_{i+1} S_{i+2} S_{i+3}  \)).
 \end{remark}
  For the Ising model, we have \( S_i = \pm 1 \) and nearest neighbour interaction implies that we have two values and that \( \mathbb{T} \) is a \( 2 \times 2 \) matrix whose components are
-\begin{subequations}
 \begin{align}
   \bra{+1} \mathbb{T} \ket{+1} &= \exp [K+h]  \\
     \bra{+1} \mathbb{T} \ket{-1} &=   \bra{-1} \mathbb{T} \ket{+1} = \exp [-K] \\
       \bra{-1} \mathbb{T} \ket{-1} &=\exp [K-h] 
 \end{align}
-\end{subequations}
 The explicit representation is
 \begin{equation}
   \mathbb{T} =
@@ -203,7 +201,6 @@ e^{K+h}    & e^{-K}  \\
 \end{equation}
 
 Let us introduce some useful notations and relations using the bra-ket formalism:
-\begin{subequations}
 \begin{align}
   \ket{S_i^{(+)}} &= \begin{pmatrix}
   1 \\
@@ -216,7 +213,6 @@ Let us introduce some useful notations and relations using the bra-ket formalism
   \end{pmatrix}_i   \\
   \bra{S_i^{(+)}} &= (1^*,0)_i \quad   \bra{S_i^{(-)}} = (0,1^*)_i
 \end{align}
-\end{subequations}
 The identity relation is:
 \begin{equation}
   \sum_{S_i = \pm 1}^{}  \ket{S_i} \bra{S_i} =
@@ -353,7 +349,7 @@ Note that in this case the matrix \( \mathbb{S}_i \) is equal to the Pauli matri
 
 We have $\sigma_{i} = +1,0,-1$ so we have $n=1$ and $n+2 = 3$.
 We can write our vectors as:
-$$
+
 \begin{align}
 +&1 \to \ket{S_{i}^{(+)}}  &= \begin{pmatrix}
 1 \\
@@ -371,7 +367,7 @@ $$
 1
 \end{pmatrix} \quad \bra{S_{i}^{-}} = (0,0,1^{*})\\
 \end{align}
-$$
+
 
 We then have
 $$\mathbb{S}_{i} = \sum_{\sigma_{i} = \pm 1,0} \ket{S_{i}^{(\sigma_{i})}} \sigma_{i}\bra{S_{i}^{(\sigma_{i})}} = \begin{pmatrix}
@@ -496,30 +492,26 @@ On the other hand, since
   \mathbb{T} = \sum_{i=1}^{n+2} \ket{t_i} \lambda _i  \bra{t_i}
 \end{equation*}
 we have
-\begin{subequations}
 \begin{align}
   \mathbb{T}^{R-1} &= \sum_{i=1}^{n+2} \ket{t_i} \lambda _i^{R-1}  \bra{t_i} \\
     \mathbb{T}^{N-R+1} &= \sum_{i=1}^{n+2} \ket{t_i} \lambda _i^{N-R+1}  \bra{t_i}
 \end{align}
-\end{subequations}
+
 Hence,
-\begin{subequations}
 \begin{align}
   \bra{S_1} \mathbb{T}^{R-1} \ket{S_R} & = \sum_{i=1}^{n+2} \braket{S_1}{t_i} \lambda_i ^{R-1} \braket{t_i}{S_R} \\
   \bra{S_R} \mathbb{T}^{N-R+1} \ket{S_1} & = \sum_{j=1}^{n+2} \braket{S_R}{t_j} \lambda_j ^{N-R+1} \braket{t_j}{S_1}   
 \end{align}
-\end{subequations}
+
 and plugging these expressions in  \eqref{eq:7_1} one gets
 \begin{equation*}
   \sum_{\{ S \}  }^{}  S_1 S_R e^{-\beta \mathcal{H}_N} = \sum_{S_1 S_R}^{} S_1 \sum_{i=1}^{n+2} \braket{S_1}{t_i} \lambda _i^{R-1} \braket{t_i}{S_R} S_R \sum_{j=1}^{n+2} \braket{S_R}{t_j} \lambda_j ^{N-R+1} \braket{t_j}{S_1}
 \end{equation*}
 Since the term \( \braket{t_j}{S_1}  \) is a scalar, it can be moved at the beginning of the product. Remembering the notations
-\begin{subequations}
 \begin{align}
   \mathbb{S}_1 &= \sum_{S_1}^{} \ket{S_1} S_1 \bra{S_1} \\
   \mathbb{S}_R &= \sum_{S_R}^{} \ket{S_R} S_R \bra{S_R}
 \end{align}
-\end{subequations}
 one gets
 \begin{equation}
   \sum_{\{ S \}  }^{}  S_1 S_R e^{-\beta \mathcal{H}_N}= \sum_{ij}^{} \bra{t_j } \mathbb{S}_1 \ket{t_i} \lambda _i^{R-1} \bra{t_i} \mathbb{S}_R \ket{t_j} \lambda _j ^{N-R+1}
@@ -725,7 +717,7 @@ Since \( \sinh (h) \sim h+h^3 \) and \( \cosh (h) \sim 1 + h^2 \), we have
 \end{equation*}
 If we now derive with respect to \emph{h}
 
-\begin{equation*}
+\begin{equation}
 \chi_{T} = \frac{\cosh(h)}{\sqrt{ \sinh^{2}(h) + e^{-4K} } (1 + e^{4K}\sinh^{2}(h))}
 \end{equation}
 In the case of $h\ll1$:
@@ -853,11 +845,11 @@ where the spins have infinite magnitude i.e. $\mid \vec{S}\mid \to \infty$.
 We introduce the unit vector operator:
 $$s_{i} = \frac{\vec{S}_{i}}{\mid \vec{S}\mid}$$
 It's commutation rules are:
-$$\begin{align}
+\begin{align}
 [s^{x}_{i},s_{i}^{y}] = i \frac{s_{i}^{z}}{S} \\
 [s^{y}_{i},s_{i}^{z}] = i \frac{s_{i}^{x}}{S} \\
 [s^{z}_{i},s_{i}^{x}] = i \frac{s_{i}^{y}}{S}
-\end{align}$$
+\end{align}
 Where $S = \mid \vec{S}\mid$.
 In the limit $S \to \infty$ the components commute and the hamiltonian form can be written in classical form:
 $$\mathcal{H} = - J\sum_{i}^{N} \vec{s}_{i} \cdot \vec{s}_{i+1}$$
@@ -1326,12 +1318,12 @@ In the 2x2 transfer matrix in the 1-dim case we have two possible values. Now, w
 
 \subsubsection*{Thermodynamic Limit}
 We can write our bulk free-energy as:
-$$\begin{align}
+\begin{align}
 f_{b} &= -k_{B}T \lim_{ N \to \infty } \lim_{ M \to \infty } \frac{1}{MN} \ln(Z) \\
 &= -k_{B}T \lim_{ N \to \infty } \lim_{ M \to \infty } \frac{1}{NM} \ln(\lambda_{+}^{M} + \lambda_{-}^{M} + \dots) \\
 &= -k_{B}T \lim_{ N \to \infty } \frac{1}{N}\ln(\lambda_{+}) - k_{B}T \lim_{ N \to \infty } \lim_{ M \to \infty } \frac{1}{MN} \ln\left[ 1 + \sum_{k} \left( \frac{\lambda_{k}}{\lambda_{+}} \right)^{M} \right]  \\
 &= -k_{B}T \lim_{ N \to \infty } \frac{1}{N}\ln(\lambda_{+})(N) \quad (\star)
-\end{align}$$
+\end{align}
 Our ultimate goal is to find the largest eigenvalue of the $2^{N}\times 2^{N}$ matrix and take the limit $(\star)$.
 Not an easy task to achieve.
 The first solution was given by ONSAGER using Lie Algebra and group representation for $H = 0$ (1944).
