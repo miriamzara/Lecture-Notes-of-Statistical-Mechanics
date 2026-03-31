@@ -1,0 +1,59 @@
+\documentclass{book}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tcolorbox}
+
+\begin{document}
+
+
+\tableofcontents
+\chapter{Recall of Thermodynamics}
+\chapter{Thermodynamics of Phase Transitions}
+\chapter{Recall of ensembles theory}
+\chapter{Statistical mechanics and phase transitions}
+This chapter aims to make some general points about how statistical mechanics "frames" phase transitions.
+These are very general things that we will encounter throughout and serve as "fixed points" for the reasonings
+that we will make onwards. These points are:
+
+\begin{enumerate}
+    \item In statistical mechanics, we initially perform calculations with a finite number of particles $N$. However, to recover results consistent with classical thermodynamics, we must take the limit $N \to \infty$. 
+    \item Fluctuation-dissipation relation
+\end{enumerate}
+
+\section{The bulk free energy: why taking the $N\rightarrow \infty$ limit of stat mech quantities}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Key Concept]
+In statistical mechanics, we initially perform calculations with a finite number of particles $N$. However, to recover results consistent with classical thermodynamics, we must take the limit $N \to \infty$. 
+\end{tcolorbox}
+
+\subsection*{1. The Finite vs. Infinite Gap}
+In statistical mechanics, we deal with sums over discrete states. For finite $N$, these sums are always well-behaved and analytic. Thermodynamics, however, describes the \textbf{emergent behavior} of a continuum. Sending $N$ to infinity allows us to observe if these microscopic properties stabilize into the macroscopic values (like pressure or temperature) observed in the real world.
+
+\subsection*{2. Why the Limit Must Be Proved}
+The existence of the limit is not guaranteed; it depends entirely on the nature of the particle interactions. The limit might fail to exist if:
+\begin{itemize}
+    \item \textbf{Long-range interactions:} If forces do not decay quickly enough (e.g., certain gravitational models), the energy could grow faster than the volume, causing the bulk free energy density $f_b$ to diverge.
+    \item \textbf{Unstable potentials:} If the short-range attraction is too strong, the system might collapse into a state of infinite density.
+\end{itemize}
+
+\subsection*{3. The Stability Condition}
+For a statistical mechanics model to be physically valid in the thermodynamic limit, we generally must prove:
+\begin{enumerate}
+    \item \textbf{Stability:} The potential energy per particle must have a lower bound.
+    \item \textbf{Temperateness:} The interaction potential must decay sufficiently fast at large distances.
+\end{enumerate}
+If these conditions are met, the limit for the bulk free energy density exists:
+\[ f_b \equiv \lim_{V \to \infty} \frac{F_\Omega}{V} \]
+
+\subsection*{4. Phase Transitions}
+The $N \to \infty$ limit is mathematically essential for describing phase transitions. A finite sum of smooth functions is always smooth; therefore, the sharp "kinks" or singularities associated with phenomena like boiling or freezing only appear mathematically when we reach the infinite limit.
+
+
+
+
+\section{The fluctuation-dissipation relation}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Key Concept]
+If you want to know how a system reacts to an outside force, just look at how it 'jiggles' on its own.
+\end{tcolorbox}
+\end{document}
